@@ -1,6 +1,6 @@
 # Bridge Contracts Boilerplate
 
-Base bridge contract collection for **one-way, one-time token swap**.
+bridge contract collection for **one-way, one-time token swap**.
 
 ## Project Overview
 
@@ -20,3 +20,20 @@ Base bridge contract collection for **one-way, one-time token swap**.
 ## Compilation
 
 ```
+npm install
+npx hardhat compile
+```
+
+## On-chain info
+
+#### eth mainnet bridge
+`TO BE DEPLOYED'
+
+#### eth mainnet APM
+[Etherscan](https://etherscan.io/token/0xC8C424B91D8ce0137bAB4B832B7F7D154156BA6c#code)
+`0xC8C424B91D8ce0137bAB4B832B7F7D154156BA6c`
+
+#### bsc mainnet NAWS
+[Bscscan](https://bscscan.com/token/0x726a54E04f394b6e44e58a2D7CB0fEc61361D10E#code)
+`0x726a54E04f394b6e44e58a2D7CB0fEc61361D10E`
+
