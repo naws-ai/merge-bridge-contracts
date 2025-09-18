@@ -9,7 +9,7 @@ task("flatten", "Flattens and prints contracts and their dependencies")
     // Flatten TokenBridge.sol
     console.log("Flattening TokenBridge.sol...");
     const flattenedBridge = await hre.run("flatten:get-flattened-sources", {
-      files: [path.join(contractsPath, "bridge", "TokenBridge.sol")],
+      files: [path.join(contractsPath, "TokenBridge.sol")],
     });
     fs.writeFileSync(
       path.join(__dirname, "..", "flattened", "TokenBridge.sol"),

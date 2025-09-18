@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Dummy1234",
+  "sourceName": "contracts/openzeppelin-contracts-5.0.0/mocks/Stateless.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212203015f87da41df39e943267d42c1069409db8d8bc78603873c8de2045c9a3902864736f6c63430008140033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212203015f87da41df39e943267d42c1069409db8d8bc78603873c8de2045c9a3902864736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

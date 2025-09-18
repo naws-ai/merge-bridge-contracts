@@ -1,0 +1,39 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DisableNew",
+  "sourceName": "contracts/openzeppelin-contracts-5.0.0/mocks/InitializableMock.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidInitialization",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotInitializing",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "version",
+          "type": "uint64"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061001f61002460201b60201c565b61018e565b600061003461012860201b60201c565b90508060000160089054906101000a900460ff161561007f576040517ff92ee8a900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b67ffffffffffffffff80168160000160009054906101000a900467ffffffffffffffff1667ffffffffffffffff16146101255767ffffffffffffffff8160000160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055507fc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d267ffffffffffffffff60405161011c9190610173565b60405180910390a15b50565b60007ff0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00905090565b600067ffffffffffffffff82169050919050565b61016d81610150565b82525050565b60006020820190506101886000830184610164565b92915050565b603f8061019c6000396000f3fe6080604052600080fdfea264697066735822122011b9870e5d8dbcfd8ca34302386f89a2781b1be5c1a8f340c3b15d012789886664736f6c63430008140033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122011b9870e5d8dbcfd8ca34302386f89a2781b1be5c1a8f340c3b15d012789886664736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

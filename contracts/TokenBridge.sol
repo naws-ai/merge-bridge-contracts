@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
-import {IERC20Metadata} from "openzeppelin-contracts-5.0.0/token/ERC20/extensions/IERC20Metadata.sol";
+import {IERC20Metadata} from "./openzeppelin-contracts-5.0.0/token/ERC20/extensions/IERC20Metadata.sol";
 
 contract TokenBridge {
     IERC20Metadata public immutable sourceToken;

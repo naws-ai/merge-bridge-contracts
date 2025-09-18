@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IProxyExposed",
+  "sourceName": "contracts/openzeppelin-contracts-5.0.0/mocks/UpgradeableBeaconMock.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "$getBeacon",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
