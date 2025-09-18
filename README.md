@@ -16,6 +16,7 @@ bridge contract collection for **one-way, one-time token swap**.
 - No withdrawal mechanism by design (source tokens are permanently locked)  
 - Immutable contract state ensures a secure migration process  
 - Event emission is sufficient for cross-chain verification  
+- Bridge exclusively supports tokens with 18 decimals  
 
 ## Compilation
 
