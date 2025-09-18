@@ -1,14 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
-import {IERC20} from "../openzeppelin-contracts-5.0.0/token/ERC20/IERC20.sol";
+import {IERC20Metadata} from "openzeppelin-contracts-5.0.0/token/ERC20/extensions/IERC20Metadata.sol";
 
 contract TokenBridge {
-    IERC20 public immutable sourceToken;
+    IERC20Metadata public immutable sourceToken;
     
     constructor(address _sourceToken) {
         require(_sourceToken != address(0), "Invalid token address");
-        sourceToken = IERC20(_sourceToken);
+        sourceToken = IERC20Metadata(_sourceToken);
+
+        // This bridge is designed to work only with tokens that have 18 decimals.
+        // This ensures consistency in amount interpretation across chains.
+        require(sourceToken.decimals() == 18, "Token must have 18 decimals");
     }
 
     /**
