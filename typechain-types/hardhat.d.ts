@@ -942,6 +942,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ICompoundTimelock__factory>;
     getContractFactory(
+      name: "TestERC20",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TestERC20__factory>;
+    getContractFactory(
       name: "TokenBridge",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TokenBridge__factory>;
@@ -2107,6 +2111,11 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.ICompoundTimelock>;
     getContractAt(
+      name: "TestERC20",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TestERC20>;
+    getContractAt(
       name: "TokenBridge",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -3041,6 +3050,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ICompoundTimelock>;
     deployContract(
+      name: "TestERC20",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestERC20>;
+    deployContract(
       name: "TokenBridge",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TokenBridge>;
@@ -4205,6 +4218,11 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.ICompoundTimelock>;
+    deployContract(
+      name: "TestERC20",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestERC20>;
     deployContract(
       name: "TokenBridge",
       args: any[],
