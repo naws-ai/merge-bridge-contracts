@@ -3,6 +3,7 @@
 /* eslint-disable */
 import type * as openzeppelinContracts500 from "./openzeppelin-contracts-5.0.0";
 export type { openzeppelinContracts500 };
+export type { TestERC20 } from "./TestERC20";
 export type { TokenBridge } from "./TokenBridge";
 export * as factories from "./factories";
 export type { AccessControl } from "./openzeppelin-contracts-5.0.0/access/AccessControl";
@@ -469,4 +470,5 @@ export type { EnumerableMap } from "./openzeppelin-contracts-5.0.0/utils/structs
 export { EnumerableMap__factory } from "./factories/openzeppelin-contracts-5.0.0/utils/structs/EnumerableMap__factory";
 export type { ICompoundTimelock } from "./openzeppelin-contracts-5.0.0/vendor/compound/ICompoundTimelock";
 export { ICompoundTimelock__factory } from "./factories/openzeppelin-contracts-5.0.0/vendor/compound/ICompoundTimelock__factory";
+export { TestERC20__factory } from "./factories/TestERC20__factory";
 export { TokenBridge__factory } from "./factories/TokenBridge__factory";
