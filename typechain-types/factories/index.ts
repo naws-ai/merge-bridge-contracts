@@ -2,4 +2,5 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as openzeppelinContracts500 from "./openzeppelin-contracts-5.0.0";
+export { TestERC20__factory } from "./TestERC20__factory";
 export { TokenBridge__factory } from "./TokenBridge__factory";
