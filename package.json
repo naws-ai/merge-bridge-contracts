@@ -2,6 +2,8 @@
   "scripts": {
     "test": "hardhat test",
     "compile": "hardhat compile",
+    "flatten": "node scripts/flatten.js",
+    "build": "npm run compile && npm run flatten",
     "deploy": "hardhat run scripts/deploy.ts"
   },
   "devDependencies": {
