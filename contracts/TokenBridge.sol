@@ -2,8 +2,9 @@
 pragma solidity 0.8.20;
 
 import {IERC20Metadata} from "./openzeppelin-contracts-5.0.0/token/ERC20/extensions/IERC20Metadata.sol";
+import {ReentrancyGuard} from "./openzeppelin-contracts-5.0.0/utils/ReentrancyGuard.sol";
 
-contract TokenBridge {
+contract TokenBridge is ReentrancyGuard {
     IERC20Metadata public immutable sourceToken;
     
     constructor(address _sourceToken) {
@@ -31,7 +32,7 @@ contract TokenBridge {
     /**
      * @param receiverBEP20Address Receiver address on BSC
      */
-    function bridge(address receiverBEP20Address) external {
+    function bridge(address receiverBEP20Address) external nonReentrant {
         // CAUTION: This contract is designed for standard ERC20 tokens.
         // It may not be compatible with fee-on-transfer tokens, as the amount logged in the event
         // might differ from the actual amount locked in the contract.
