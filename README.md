@@ -17,13 +17,51 @@ bridge contract collection for **one-way, one-time token swap**.
 - Immutable contract state ensures a secure migration process  
 - Event emission is sufficient for cross-chain verification  
 - Bridge exclusively supports tokens with 18 decimals  
+- **Security Note**: This contract is designed for standard ERC20 tokens only. It may not be compatible with fee-on-transfer tokens, as the amount logged in the event might differ from the actual amount locked in the contract.
 
-## Compilation
+## Security Testing
 
+The project includes comprehensive security tests covering:
+- Reentrancy attack prevention
+- Fee-on-transfer token compatibility (with warnings)
+- Transfer failure handling
+- Edge case scenarios (zero amounts, large amounts)
+- Gas limit testing
+- Access control validation
+
+Run security tests:
+```
+npm test test/TokenBridgeSecurity.test.ts
+```
+
+## Development
+
+### Installation
 ```
 npm install
-npx hardhat compile
 ```
+
+### Compilation
+```
+npm run compile
+```
+
+### Testing
+```
+npm test                    # Run all tests
+npm run test-flattened     # Flatten contract and run tests
+```
+
+### Building (Compile + Flatten + Test)
+```
+npm run build
+```
+
+### Contract Flattening
+```
+npm run flatten            # Generate flattened contract for deployment
+```
+The flattened contract will be saved to `flattened/TokenBridge.sol` and includes all dependencies in a single file for easy deployment.
 
 ## On-chain info
 
