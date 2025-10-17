@@ -1,19 +1,4 @@
 // Sources flattened with hardhat v2.23.0 https://hardhat.org
-//
-// ============================================================================
-// FLATTENED TOKEN BRIDGE CONTRACT
-// ============================================================================
-// This file contains the TokenBridge contract with all its dependencies
-// flattened into a single file for easy deployment.
-//
-// DEPLOYMENT READY: This file can be deployed directly to any EVM-compatible
-// blockchain without additional dependency management.
-//
-// SECURITY NOTE: This contract is designed for standard ERC20 tokens only.
-// It may not be compatible with fee-on-transfer tokens.
-//
-// USAGE: Deploy this contract with the source token address as constructor parameter.
-// ============================================================================
 
 // SPDX-License-Identifier: MIT
 
