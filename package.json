@@ -2,8 +2,9 @@
   "scripts": {
     "test": "hardhat test",
     "compile": "hardhat compile",
-    "flatten": "node scripts/flatten.js",
-    "build": "npm run compile && npm run flatten",
+    "flatten": "npx hardhat flatten contracts/TokenBridge.sol > flattened/TokenBridge.sol",
+    "test-flattened": "npm run flatten && npm test",
+    "build": "npm run compile && npm run test-flattened",
     "deploy": "hardhat run scripts/deploy.ts"
   },
   "devDependencies": {
