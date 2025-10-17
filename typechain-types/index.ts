@@ -3,9 +3,18 @@
 /* eslint-disable */
 import type * as openzeppelinContracts500 from "./openzeppelin-contracts-5.0.0";
 export type { openzeppelinContracts500 };
+export type { FailingToken } from "./FailingToken";
+export type { FeeOnTransferToken } from "./FeeOnTransferToken";
+export type { MaliciousToken } from "./MaliciousToken";
 export type { TestERC20 } from "./TestERC20";
+export type { TestFailingToken } from "./TestFailingToken";
+export type { TestFeeOnTransferToken } from "./TestFeeOnTransferToken";
+export type { TestMaliciousToken } from "./TestMaliciousToken";
 export type { TokenBridge } from "./TokenBridge";
 export * as factories from "./factories";
+export { FailingToken__factory } from "./factories/FailingToken__factory";
+export { FeeOnTransferToken__factory } from "./factories/FeeOnTransferToken__factory";
+export { MaliciousToken__factory } from "./factories/MaliciousToken__factory";
 export type { AccessControl } from "./openzeppelin-contracts-5.0.0/access/AccessControl";
 export { AccessControl__factory } from "./factories/openzeppelin-contracts-5.0.0/access/AccessControl__factory";
 export type { AccessControlDefaultAdminRules } from "./openzeppelin-contracts-5.0.0/access/extensions/AccessControlDefaultAdminRules";
@@ -471,4 +480,7 @@ export { EnumerableMap__factory } from "./factories/openzeppelin-contracts-5.0.0
 export type { ICompoundTimelock } from "./openzeppelin-contracts-5.0.0/vendor/compound/ICompoundTimelock";
 export { ICompoundTimelock__factory } from "./factories/openzeppelin-contracts-5.0.0/vendor/compound/ICompoundTimelock__factory";
 export { TestERC20__factory } from "./factories/TestERC20__factory";
+export { TestFailingToken__factory } from "./factories/TestFailingToken__factory";
+export { TestFeeOnTransferToken__factory } from "./factories/TestFeeOnTransferToken__factory";
+export { TestMaliciousToken__factory } from "./factories/TestMaliciousToken__factory";
 export { TokenBridge__factory } from "./factories/TokenBridge__factory";

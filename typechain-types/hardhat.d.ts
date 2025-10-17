@@ -14,6 +14,18 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
+      name: "FailingToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FailingToken__factory>;
+    getContractFactory(
+      name: "FeeOnTransferToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.FeeOnTransferToken__factory>;
+    getContractFactory(
+      name: "MaliciousToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.MaliciousToken__factory>;
+    getContractFactory(
       name: "AccessControl",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.AccessControl__factory>;
@@ -946,11 +958,38 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TestERC20__factory>;
     getContractFactory(
+      name: "TestFailingToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TestFailingToken__factory>;
+    getContractFactory(
+      name: "TestFeeOnTransferToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TestFeeOnTransferToken__factory>;
+    getContractFactory(
+      name: "TestMaliciousToken",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.TestMaliciousToken__factory>;
+    getContractFactory(
       name: "TokenBridge",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.TokenBridge__factory>;
 
     getContractAt(
+      name: "FailingToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FailingToken>;
+    getContractAt(
+      name: "FeeOnTransferToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.FeeOnTransferToken>;
+    getContractAt(
+      name: "MaliciousToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.MaliciousToken>;
+    getContractAt(
       name: "AccessControl",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
@@ -2115,6 +2154,21 @@ declare module "hardhat/types/runtime" {
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.TestERC20>;
+    getContractAt(
+      name: "TestFailingToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TestFailingToken>;
+    getContractAt(
+      name: "TestFeeOnTransferToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TestFeeOnTransferToken>;
+    getContractAt(
+      name: "TestMaliciousToken",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.TestMaliciousToken>;
     getContractAt(
       name: "TokenBridge",
       address: string | ethers.Addressable,
@@ -2122,6 +2176,18 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.TokenBridge>;
 
     deployContract(
+      name: "FailingToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FailingToken>;
+    deployContract(
+      name: "FeeOnTransferToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FeeOnTransferToken>;
+    deployContract(
+      name: "MaliciousToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MaliciousToken>;
+    deployContract(
       name: "AccessControl",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.AccessControl>;
@@ -3053,12 +3119,39 @@ declare module "hardhat/types/runtime" {
       name: "TestERC20",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TestERC20>;
+    deployContract(
+      name: "TestFailingToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestFailingToken>;
+    deployContract(
+      name: "TestFeeOnTransferToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestFeeOnTransferToken>;
+    deployContract(
+      name: "TestMaliciousToken",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestMaliciousToken>;
     deployContract(
       name: "TokenBridge",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TokenBridge>;
 
     deployContract(
+      name: "FailingToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FailingToken>;
+    deployContract(
+      name: "FeeOnTransferToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.FeeOnTransferToken>;
+    deployContract(
+      name: "MaliciousToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.MaliciousToken>;
+    deployContract(
       name: "AccessControl",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
@@ -4223,6 +4316,21 @@ declare module "hardhat/types/runtime" {
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.TestERC20>;
+    deployContract(
+      name: "TestFailingToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestFailingToken>;
+    deployContract(
+      name: "TestFeeOnTransferToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestFeeOnTransferToken>;
+    deployContract(
+      name: "TestMaliciousToken",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.TestMaliciousToken>;
     deployContract(
       name: "TokenBridge",
       args: any[],

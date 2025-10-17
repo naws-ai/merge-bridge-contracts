@@ -2,5 +2,11 @@
 /* tslint:disable */
 /* eslint-disable */
 export * as openzeppelinContracts500 from "./openzeppelin-contracts-5.0.0";
+export { FailingToken__factory } from "./FailingToken__factory";
+export { FeeOnTransferToken__factory } from "./FeeOnTransferToken__factory";
+export { MaliciousToken__factory } from "./MaliciousToken__factory";
 export { TestERC20__factory } from "./TestERC20__factory";
+export { TestFailingToken__factory } from "./TestFailingToken__factory";
+export { TestFeeOnTransferToken__factory } from "./TestFeeOnTransferToken__factory";
+export { TestMaliciousToken__factory } from "./TestMaliciousToken__factory";
 export { TokenBridge__factory } from "./TokenBridge__factory";
