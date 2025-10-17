@@ -125,34 +125,43 @@ describe("TokenBridge Security Tests", function () {
       // Test with large but safe amount (not max uint256 to avoid overflow)
       const largeAmount = ethers.parseEther("1000000"); // 1M tokens
       await mockToken.mint(user1.address, largeAmount);
-      await mockToken.connect(user1).approve(await tokenBridge.getAddress(), largeAmount);
+      
+      // Approve the total balance (existing + new)
+      const totalBalance = await mockToken.balanceOf(user1.address);
+      await mockToken.connect(user1).approve(await tokenBridge.getAddress(), totalBalance);
 
       // Should handle large amounts without overflow
       await expect(tokenBridge.connect(user1).bridge(user2.address))
         .to.emit(tokenBridge, "Bridged")
-        .withArgs(user1.address, user2.address, largeAmount);
+        .withArgs(user1.address, user2.address, totalBalance);
     });
 
     it("Should handle very small amounts", async function () {
-      // Mint very small amount (1 wei)
+      // Use a fresh user to avoid beforeEach interference
+      const [, , , , freshUser] = await ethers.getSigners();
+      
+      // Mint very small amount (1 wei) to fresh user
       const smallAmount = 1n;
-      await mockToken.mint(user1.address, smallAmount);
-      await mockToken.connect(user1).approve(await tokenBridge.getAddress(), smallAmount);
+      await mockToken.mint(freshUser.address, smallAmount);
+      await mockToken.connect(freshUser).approve(await tokenBridge.getAddress(), smallAmount);
 
-      await expect(tokenBridge.connect(user1).bridge(user2.address))
+      await expect(tokenBridge.connect(freshUser).bridge(user2.address))
         .to.emit(tokenBridge, "Bridged")
-        .withArgs(user1.address, user2.address, smallAmount);
+        .withArgs(freshUser.address, user2.address, smallAmount);
     });
   });
 
   describe("Gas Limit Tests", function () {
     it("Should handle large token amounts without gas issues", async function () {
+      // Use a fresh user to avoid beforeEach interference
+      const [, , , , freshUser] = await ethers.getSigners();
+      
       // Test with large amount
       const largeAmount = ethers.parseEther("1000000"); // 1M tokens
-      await mockToken.mint(user1.address, largeAmount);
-      await mockToken.connect(user1).approve(await tokenBridge.getAddress(), largeAmount);
+      await mockToken.mint(freshUser.address, largeAmount);
+      await mockToken.connect(freshUser).approve(await tokenBridge.getAddress(), largeAmount);
 
-      const tx = await tokenBridge.connect(user1).bridge(user2.address);
+      const tx = await tokenBridge.connect(freshUser).bridge(user2.address);
       const receipt = await tx.wait();
 
       // Should complete within reasonable gas limit
